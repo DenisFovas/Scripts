@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -eq 2 ] 
+then
+		if [ -d $1 ] 
+		then
+				cd ~/Documents/git/CollegeWork
+				cp -r $1 ./$2
+				git add $2
+				git commit
+				git push
+		else
+				echo "Invalid path for the backup"
+		fi
+else
+	echo "Insert please 2 parameters. First is the path for the backup, second is the file name to which we will save it."
+fi
